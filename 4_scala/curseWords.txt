@@ -1,0 +1,4 @@
+Blimey,Oh Dear
+Flip,Fudge
+Shoot,Pucky
+//Darn,Beans

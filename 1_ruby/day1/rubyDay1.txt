@@ -1,0 +1,37 @@
+String replacement
+
+irb(main):001:0> s = "String"
+=> "String"
+irb(main):002:0> s[1]='p'
+=> "p"
+irb(main):003:0> s
+=> "Spring"
+irb(main):004:0>
+
+irb(main):004:0> "hello".gsub(/([aeiou])/, '<\1>')
+=> "h<e>ll<o>"
+
+1. Print "Hello World"
+
+puts 'Hello world'
+
+2. "Hello, Ruby". Find index of "Ruby"
+
+"Hello, Ruby".index('Ruby')
+
+3.
+
+irb(main):169:0> x = 0
+=> 0
+irb(main):170:0> while x < 10
+irb(main):171:1>   x = x + 1
+irb(main):172:1>   puts x
+irb(main):173:1> end
+
+4.
+
+x = 0
+while x < 10
+  x = x + 1
+  puts "This is line #{x}"
+end

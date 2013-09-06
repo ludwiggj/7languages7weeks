@@ -1,0 +1,5 @@
+rlwrap gprolog --init-goal "consult('.pl')"
+
+gprolog --init-goal "write(before), nl" --entry-goal "write(inside), nl" --query-goal "append([a,b],[c,d],X)"
+
+gprolog --query-goal "[family3], append([a,b],[c,d],X)"

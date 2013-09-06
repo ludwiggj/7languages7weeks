@@ -1,0 +1,25 @@
+Go!
+Going to sleep
+c7: going to the barber!
+c10: going to the barber!
+c6: going to the barber!
+c5: going to the barber!
+c2: going to the barber!
+c4: going to the barber!
+c1: going to the barber!
+c8: going to the barber!
+c9: going to the barber!
+c3: going to the barber!
+
+
+c4: is leaving and didn't get a haircut :-(
+
+c7: is leaving and got a great haircut :-)
+c10: is leaving and got a great haircut :-)
+c6: is leaving and got a great haircut :-)
+c5: is leaving and got a great haircut :-)
+c2: is leaving and got a great haircut :-)
+c1: is leaving and got a great haircut :-)
+c8: is leaving and got a great haircut :-)
+c9: is leaving and got a great haircut :-)
+c3: is leaving and got a great haircut :-)

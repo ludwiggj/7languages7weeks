@@ -1,0 +1,147 @@
+Clojure 1.3.0
+user=> 
+(def line [[0 0] [10 20]])
+user=> nil
+#<Var@2e879860: [[0 0] [10 20]]>
+user=> 
+line
+[[0 0] [10 20]]
+user=> 
+(defn line-end [ln] (last ln))
+#<Var@9642bd6: #<user$line_end user$line_end@14a8e586>>
+user=> 
+line
+[[0 0] [10 20]]
+user=> 
+line-end
+#<user$line_end user$line_end@14a8e586>
+user=> 
+(line-end line)
+[10 20]
+user=> 
+(defn line-end [[_ second]] second)
+#<Var@9642bd6: #<user$line_end user$line_end@e96b5c2>>
+user=> 
+(line-end line)
+[10 20]
+user=> 
+(defn line-end [ln] (last ln))
+#<Var@9642bd6: #<user$line_end user$line_end@608beff2>>
+user=> 
+(line-end (line [1 2 3]))
+IllegalArgumentException Key must be integer  clojure.lang.APersistentVector.invoke (APersistentVector.java:250)
+user=> 
+(line-end line [1 2 3])
+ArityException Wrong number of args (2) passed to: user$line-end  clojure.lang.AFn.throwArity (AFn.java:437)
+user=> 
+(line-end (concat line [1 2 3]))
+3
+user=> 
+line
+[[0 0] [10 20]]
+user=> 
+(concat line [1 2 3])
+([0 0] [10 20] 1 2 3)
+user=> 
+(concat line [[1 2 3]])
+([0 0] [10 20] [1 2 3])
+user=> 
+(line-end (concat line [[1 2 3]]))
+[1 2 3]
+user=> 
+(defn line-end2 [[_ second]] second)
+#<Var@55127b52: #<user$line_end2 user$line_end2@2200c550>>
+user=> 
+(line-end2 (concat line [[1 2 3]]))
+[10 20]
+user=> 
+(def board [[:x :o :x] [:o :x :o] [:o :x :o]])
+#<Var@67cee792: [[:x :o :x] [:o :x :o] [:o :x :o]]>
+user=> 
+board
+[[:x :o :x] [:o :x :o] [:o :x :o]]
+user=> 
+(defn centre [[_ [_ c _] _]] c)
+#<Var@19108727: #<user$centre user$centre@5fda87db>>
+user=> 
+centre
+#<user$centre user$centre@5fda87db>
+user=> 
+(centre board)
+:x
+user=> 
+(defn centre [board] (let [[_ [_ c _] _] board] c))
+#<Var@19108727: #<user$centre user$centre@2b68989e>>
+user=> 
+(centre board)
+:x
+user=> 
+(defn centre [board] (let [[_ [_ c]] board] c))
+#<Var@19108727: #<user$centre user$centre@2c6c5356>>
+user=> 
+(centre board)
+:x
+user=> 
+(def person {:name "Jabba" :job "Slug"})
+#<Var@7023d08b: {:name "Jabba", :job "Slug"}>
+user=> 
+person
+{:name "Jabba", :job "Slug"}
+user=> 
+{name :name}
+{#<core$name clojure.core$name@2136bdda> :name}
+user=> 
+name
+#<core$name clojure.core$name@2136bdda>
+user=> 
+[{name :name} person]
+[{#<core$name clojure.core$name@2136bdda> :name}
+ {:name "Jabba", :job "Slug"}]
+user=> 
+person
+{:name "Jabba", :job "Slug"}
+user=> 
+person
+{:name "Jabba", :job "Slug"}
+user=> 
+[{name :name} person]
+[{#<core$name clojure.core$name@2136bdda> :name}
+ {:name "Jabba", :job "Slug"}]
+user=> 
+name
+#<core$name clojure.core$name@2136bdda>
+user=> 
+(let [{name :name} person])
+nil
+user=> 
+(let [{name :name} person] name)
+"Jabba"
+user=> 
+(let [{name :job} person] name)
+"Slug"
+user=> 
+(let [{x :job} person] x)
+"Slug"
+user=> 
+(def villains [{:name "Jabba" :job "Slug"} {:name "Greedo" :job "Bluey"}])
+#<Var@6243487e: 
+  [{:name "Jabba", :job "Slug"} {:name "Greedo", :job "Bluey"}]>
+user=> 
+villains
+[{:name "Jabba", :job "Slug"} {:name "Greedo", :job "Bluey"}]
+user=> 
+(let [{x :job} villains] x)
+nil
+user=> 
+(let [[{x :job}] villains] x)
+"Slug"
+user=> 
+(let [[_ {x :job}] villains] x)
+"Bluey"
+user=> 
+(let [[_ {x :job}] villains] (str "Hi, " x))
+"Hi, Bluey"
+user=> 
+(let [[{x :job}] villains] (str "Hi, " x))
+"Hi, Slug"
+user=> 
