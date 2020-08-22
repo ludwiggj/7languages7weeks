@@ -16,7 +16,7 @@ class Roman
 end
 
 puts Roman.XC
-puts Roman.X
+puts Roman.XX
 puts Roman.IX
 puts Roman.XXXXII
 puts Roman.IC

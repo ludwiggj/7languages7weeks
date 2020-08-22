@@ -4,5 +4,6 @@ end
 
 meth_captures('pony') do |word, num|
   puts "in callback! word = #{word.inspect}, num = #{num.inspect}"
+  puts "in callback! word = #{word}, num = #{num}"
   word + num.to_s
 end

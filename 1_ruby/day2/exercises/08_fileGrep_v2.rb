@@ -1,4 +1,4 @@
-filename='news.txt'        
+filename='../news.txt'
 
 def display_line(line, lineNumber)
   puts "#{lineNumber} => wc [" + line.split.size.to_s + "] => #{line}"
@@ -10,6 +10,7 @@ def display_line_match(matchRegex, line, lineNumber)
   end
 end
 
+# Adding functionality to File class
 class IO
   def each_with_line_count
     each {|line| yield line, lineno}
@@ -20,7 +21,6 @@ targetPhrase = /recovery/
 
 File.open(filename, 'rb') do |file|
   file.each_with_line_count do |line, lineNumber|
-    #display_line(line, lineNumber)
 	display_line_match(targetPhrase, line, lineNumber)
   end
 end

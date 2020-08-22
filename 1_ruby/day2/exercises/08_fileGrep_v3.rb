@@ -18,13 +18,14 @@ def processFile(filename, &block)
   end
 end
 
-filename='news.txt'
+filename='../news.txt'
 targetPhrase = /US/
 
 # First display all of file
 puts "The whole file..."
 puts
 processFile(filename) {|line, lineNumber| display_line_match(nil, line, lineNumber)}
+
 # Now just the lines that match the target phrase
 puts
 puts "Now just the lines that match the target phrase #{targetPhrase.to_s}"

@@ -1,4 +1,4 @@
-filename='news.txt'
+filename='../news.txt'
 lines = []
 File.open(filename, 'rb') do |file|
   file.each_line do |line|
